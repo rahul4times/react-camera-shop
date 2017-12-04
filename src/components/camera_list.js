@@ -8,18 +8,26 @@ class CameraList extends Component {
 
   render(){
     const imageSize = {
-      width: '90px',
-      height: '100px'
+      width: '200px',
+      height: '180px'
     };
     const camList = this.props.cameras.map(camera => {
       return (
-        <div key={camera.id}>
+        <div className="cameraList" key={camera.id}>
           <Img
             style={imageSize}
             src={ camera.image }
           />
+          <br/>
           {camera.title}
-          {camera.title}
+          <br/>
+          Rating: {camera.rating} out of 5
+          <br/>
+          Price: ${camera.price}
+          <br/>
+          <button>Add to cart</button>
+          <br/>
+          <hr/>
         </div>
       );
     });
