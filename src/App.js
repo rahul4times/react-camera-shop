@@ -21,10 +21,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MuiThemeProvider>
+
           <Header />
           <CameraList />
-        </MuiThemeProvider>
+        
       </div>
     );
   }

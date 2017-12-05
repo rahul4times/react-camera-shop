@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
 import Img from 'react-image';
 class CameraList extends Component {
 
 
 
   render(){
+
     const imageSize = {
       width: '200px',
       height: '180px'
     };
+
     const camList = this.props.cameras.map(camera => {
       return (
         <div className="cameraList" key={camera.id}>
@@ -30,6 +31,7 @@ class CameraList extends Component {
         </div>
       );
     });
+
     return(
       <div>
 
