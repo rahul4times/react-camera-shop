@@ -4,11 +4,7 @@ import { bin } from 'react-icons-kit/icomoon';
 import { Table } from 'reactstrap';
 import {
   Card,
-  CardImg,
-  CardText,
   CardBody,
-  CardTitle,
-  CardSubtitle,
   Button,
   CardHeader,
   CardFooter
