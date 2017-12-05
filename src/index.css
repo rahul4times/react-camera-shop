@@ -6,3 +6,6 @@ body {
 .cameraList{
   margin-left: 20px;
 }
+.total{
+  text-align: right;
+}

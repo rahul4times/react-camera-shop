@@ -40,7 +40,7 @@ class Cart extends Component{
             </Table>
             <br/>
           </CardBody>
-          <CardFooter>
+          <CardFooter className="total">
             Subtotal:
             <br/>
             Tax:
