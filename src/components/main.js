@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'reactstrap';
+// Components
 import Header from './header';
 import CameraList from './camera_list';
 import Cart from './cart';
@@ -11,8 +13,12 @@ class MainContainer extends Component {
     return(
       <div>
         <Header />
-        <CameraList />
-        <Cart />
+        <Container>
+          <Row>
+            <Col xs="8"><CameraList /></Col>
+            <Col xs="4"><Cart /></Col>
+          </Row>
+        </Container>
         <Footer />
       </div>
     );
