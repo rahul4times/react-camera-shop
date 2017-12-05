@@ -14,9 +14,13 @@ export default(state = [], action) => {
       case ADD_TO_CART_PENDING:
         return state;
       case ADD_TO_CART_SUCCESS:
-        console.log('action: ', action.payload.data);
-        console.log('state: ', state);
-        return [...state];
+
+        const inCart = state.filter(item => {
+          return item.id !== action.payload.data[0].id;
+        })
+
+      return [...inCart, ...action.payload.data];
+
     default:
       return state;
   }

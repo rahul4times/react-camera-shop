@@ -11,16 +11,23 @@ import Footer from './footer';
 
 class MainContainer extends Component {
   render(){
+    // This displays all cameras
     const cameraList = this.props.cameras.map(camera => {
-      return( <CameraList camera={camera}/>);
-    })
+      return( <CameraList key={camera.id} camera={camera}/>);
+    });
+
+    // This displays items in cart
+    const itemsInCart = this.props.cameras.filter(camera => {
+      return camera.in_cart === true;
+    });
+
     return(
       <div>
         <Header />
         <Container>
           <Row>
             <Col xs="7">{cameraList}</Col>
-            <Col xs="5"><Cart /></Col>
+            <Col xs="5"><Cart items={itemsInCart}/></Col>
           </Row>
         </Container>
         <Footer />

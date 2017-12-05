@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import Img from 'react-image';
+import { addToCart } from '../actions/cameras'
 import {
   Card,
   CardImg,
@@ -15,8 +15,8 @@ import {
 
 class CameraList extends Component {
 
-  handleClick = (e) => {
-    e.preventDefault();
+  handleClick = () => {
+
     console.log('btn works: ', this.props.camera.id);
     this.props.addToCart(this.props.camera.id)
   }
@@ -51,17 +51,12 @@ class CameraList extends Component {
   }
 }
 
-function mapStateToProps(store, thisCompon){
 
-  return {
-    cameras: store.cameras
-  };
-}
 
 function mapDispatchToProps(dispatch){
-  return{
+  return {
     addToCart: bindActionCreators(addToCart, dispatch)
   };
 }
 
-export default connect(mapStateToProps, bindActionCreators)(CameraList);
+export default connect(null, mapDispatchToProps)(CameraList);

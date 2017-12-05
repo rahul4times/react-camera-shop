@@ -11,7 +11,22 @@ import {
 } from 'reactstrap';
 
 class Cart extends Component{
+
   render(){
+
+    console.log('Items in cart: ', this.props.items);
+
+    const itemList = this.props.items.map(item =>{
+      return (
+        <tr key={item.id}>
+          <td>1</td>
+          <td>{item.title}</td>
+          <td>{item.price}</td>
+          <td><Icon icon={bin}/></td>
+        </tr>
+      );
+    })
+
     return(
       <div>
         <br/>
@@ -21,18 +36,7 @@ class Cart extends Component{
             <br/>
             <Table hover>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Nikon</td>
-                  <td>500</td>
-                  <td><Icon icon={bin}/></td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Nikon</td>
-                  <td>500</td>
-                  <td><Icon icon={bin}/></td>
-                </tr>
+                {itemList}
               </tbody>
             </Table>
             <br/>

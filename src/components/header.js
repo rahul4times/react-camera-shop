@@ -22,7 +22,9 @@ class Header extends Component {
       isOpen: !this.state.isOpen
     });
   }
+
   render() {
+    console.log('header: ', this);
     return (
       <div>
         <Navbar color="navbar navbar-dark bg-primary" light expand="md">
