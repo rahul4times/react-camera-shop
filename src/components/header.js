@@ -24,7 +24,7 @@ class Header extends Component {
   }
 
   render() {
-    
+
     return (
       <div>
         <Navbar color="navbar navbar-dark bg-primary" light expand="md">
@@ -32,11 +32,6 @@ class Header extends Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <Button color="warning">
-                  Cart <Badge color="danger" pill>4</Badge>
-                </Button>
-              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>

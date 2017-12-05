@@ -9,7 +9,9 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Button }
+  Button,
+  Input,
+  InputGroup}
   from 'reactstrap';
 
 
@@ -55,8 +57,6 @@ class CameraList extends Component {
     );
   }
 }
-
-
 
 function mapDispatchToProps(dispatch){
   return {
