@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import timesCircle from 'react-icons/lib/fa/times-circle';
+import Icon from 'react-icons-kit';
+import { bin } from 'react-icons-kit/icomoon';
 import { Table } from 'reactstrap';
 import {
   Card,
@@ -28,13 +29,13 @@ class Cart extends Component{
                   <td>1</td>
                   <td>Nikon</td>
                   <td>500</td>
-                  <td>X</td>
+                  <td><Icon icon={bin}/></td>
                 </tr>
                 <tr>
                   <td>1</td>
                   <td>Nikon</td>
                   <td>500</td>
-                  <td>X</td>
+                  <td><Icon icon={bin}/></td>
                 </tr>
               </tbody>
             </Table>

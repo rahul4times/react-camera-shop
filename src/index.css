@@ -9,3 +9,7 @@ body {
 .total{
   text-align: right;
 }
+.footer{
+  background-color: #F7F7F7;
+  padding: 2em 1em;
+}
