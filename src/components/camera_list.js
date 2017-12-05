@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Img from 'react-image';
-import { Card, CardImg, CardText, CardBody,
-          CardTitle, CardSubtitle, Button } from 'reactstrap';
+import {
+  Card,
+  CardImg,
+  CardText,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Button }
+  from 'reactstrap';
 
 
 class CameraList extends Component {
@@ -10,8 +17,8 @@ class CameraList extends Component {
   render(){
 
     const imageSize = {
-      width: '200px',
-      height: '180px'
+      width: '300px',
+      height: '250px'
     };
 
     const camList = this.props.cameras.map(camera => {
@@ -19,12 +26,12 @@ class CameraList extends Component {
         <div className="cameraList" key={camera.id}>
           <br/>
           <Card>
-            <CardImg top width="100%" src={camera.image} alt="" />
+            <CardImg top width="100%" style={imageSize} src={camera.image} alt="" />
             <CardBody>
               <CardTitle>{camera.title}</CardTitle>
               <CardSubtitle>Price: ${camera.price}</CardSubtitle>
               <CardText>Rating: {camera.rating} out of 5</CardText>
-              <Button>Add to cart</Button>
+              <Button color="primary">Add to cart</Button>
             </CardBody>
           </Card>
           <br/>
@@ -34,14 +41,6 @@ class CameraList extends Component {
 
     return(
       <div>
-
-
-
-
-
-
-
-
 
         {camList}
 

@@ -15,8 +15,8 @@ class MainContainer extends Component {
         <Header />
         <Container>
           <Row>
-            <Col xs="8"><CameraList /></Col>
-            <Col xs="4"><Cart /></Col>
+            <Col xs="7"><CameraList /></Col>
+            <Col xs="5"><Cart /></Col>
           </Row>
         </Container>
         <Footer />

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Badge, Button } from 'reactstrap';
 import {
   Collapse,
   Navbar,
@@ -35,10 +36,9 @@ class Header extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="#">Cart</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="#">Github</NavLink>
+                <Button color="warning">
+                  Cart <Badge color="danger" pill>4</Badge>
+                </Button>
               </NavItem>
             </Nav>
           </Collapse>
