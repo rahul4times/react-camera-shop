@@ -3,14 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators} from 'redux';
 import { getCameras } from './actions/cameras';
 
-// Material Design UI stuff
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
-
 // Components
-import Header from './components/header';
-import CameraList from './components/camera_list';
+import MainContainer from './components/main';
+
 
 class App extends Component {
 
@@ -22,9 +17,8 @@ class App extends Component {
     return (
       <div className="App">
 
-          <Header />
-          <CameraList />
-        
+          <MainContainer />
+
       </div>
     );
   }
