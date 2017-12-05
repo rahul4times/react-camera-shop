@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators} from 'redux';
-
-
 import { getCameras } from './actions/cameras';
+
+// Material Design UI stuff
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+
+// Components
+import Header from './components/header';
 import CameraList from './components/camera_list';
 
 class App extends Component {
@@ -15,7 +21,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CameraList />
+        <MuiThemeProvider>
+          <Header />
+          <CameraList />
+        </MuiThemeProvider>
       </div>
     );
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Camera from './camera';
+
 import Img from 'react-image';
 class CameraList extends Component {
 
@@ -19,8 +19,7 @@ class CameraList extends Component {
             src={ camera.image }
           />
           <br/>
-          {camera.title}
-          <br/>
+          <h3>{camera.title}</h3>
           Rating: {camera.rating} out of 5
           <br/>
           Price: ${camera.price}
