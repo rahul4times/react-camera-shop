@@ -12,7 +12,7 @@ import Footer from './footer';
 class MainContainer extends Component {
   render(){
     // This displays all cameras
-    const cameraList = this.props.cameras.map(camera => {
+    const cameraList = this.props.cameras.sort((a,b)=> b.id - a.id).map(camera => {
       return( <CameraList key={camera.id} camera={camera}/>);
     });
 
@@ -20,12 +20,6 @@ class MainContainer extends Component {
     const itemsInCart = this.props.cameras.filter(camera => {
       return camera.in_cart === true;
     });
-
-    // const subTotal = this.props.items.reduce((accum, item => {
-    //   return item.price
-    // }),0);
-    // const tax = 0;
-    // const total = 0;
 
     return(
       <div>

@@ -26,6 +26,12 @@ class CameraList extends Component {
       height: '250px'
     };
 
+    const saleStyle = {
+      color: "#F00039"
+    }
+
+    const onSale = this.props.camera.on_sale ? "On Sale" : "";
+
     return(
 
       <div className="cameraList" key={this.props.camera.id}>
@@ -35,6 +41,7 @@ class CameraList extends Component {
           <CardBody>
             <CardTitle>{this.props.camera.title}</CardTitle>
             <CardSubtitle>Price: ${this.props.camera.price}</CardSubtitle>
+            <CardText style={saleStyle}>{onSale}</CardText>
             <CardText>Rating: {this.props.camera.rating} out of 5</CardText>
             <Button color="primary"
               onClick={this.handleClick}

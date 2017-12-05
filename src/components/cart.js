@@ -40,8 +40,6 @@ class Cart extends Component{
     const tax = +(subTotal * .086).toFixed(2);
     const total = (subTotal + tax).toFixed(2);
 
-    console.log('shit: ', total);
-
     return(
       <div>
         <br/>
