@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
 import Icon from 'react-icons-kit';
 import { bin } from 'react-icons-kit/icomoon';
 import { Table } from 'reactstrap';
+import { deleteFromCart } from '../actions/cameras'
 import {
   Card,
   CardBody,
@@ -11,6 +14,11 @@ import {
 } from 'reactstrap';
 
 class Cart extends Component{
+
+  handleDeleteClick = (id) => {
+    console.log('id is: ', id);
+    this.props.deleteFromCart(id);
+  }
 
   render(){
 
@@ -22,7 +30,9 @@ class Cart extends Component{
           <td>1</td>
           <td>{item.title}</td>
           <td>{item.price}</td>
-          <td><Icon icon={bin}/></td>
+          <td><Icon icon={bin}
+            onClick={this.handleDeleteClick}
+          /></td>
         </tr>
       );
     })
@@ -56,4 +66,10 @@ class Cart extends Component{
   }
 }
 
-export default Cart;
+function mapDispatchToProps(dispatch){
+  return {
+    deleteFromCart: bindActionCreators(deleteFromCart, dispatch)
+  };
+}
+
+export default connect(null, mapDispatchToProps)(Cart);

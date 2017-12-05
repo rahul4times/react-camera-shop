@@ -16,8 +16,6 @@ import {
 class CameraList extends Component {
 
   handleClick = () => {
-
-    console.log('btn works: ', this.props.camera.id);
     this.props.addToCart(this.props.camera.id)
   }
 
