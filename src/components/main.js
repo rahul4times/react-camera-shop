@@ -21,6 +21,12 @@ class MainContainer extends Component {
       return camera.in_cart === true;
     });
 
+    // const subTotal = this.props.items.reduce((accum, item => {
+    //   return item.price
+    // }),0);
+    // const tax = 0;
+    // const total = 0;
+
     return(
       <div>
         <Header />

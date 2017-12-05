@@ -16,26 +16,31 @@ import {
 class Cart extends Component{
 
   handleDeleteClick = (id) => {
-    console.log('id is: ', id);
     this.props.deleteFromCart(id);
   }
 
   render(){
-
-    console.log('Items in cart: ', this.props.items);
-
     const itemList = this.props.items.map(item =>{
       return (
         <tr key={item.id}>
           <td>1</td>
           <td>{item.title}</td>
           <td>{item.price}</td>
-          <td><Icon icon={bin}
-            onClick={this.handleDeleteClick}
+          <td ><Icon  icon={bin}
+            onClick={()=>this.handleDeleteClick(item.id)}
           /></td>
         </tr>
       );
-    })
+    });
+
+    const subTotal = this.props.items.reduce((accum, item) => {
+      return accum + item.price
+    },0);
+
+    const tax = +(subTotal * .086).toFixed(2);
+    const total = (subTotal + tax).toFixed(2);
+
+    console.log('shit: ', total);
 
     return(
       <div>
@@ -52,11 +57,11 @@ class Cart extends Component{
             <br/>
           </CardBody>
           <CardFooter className="total">
-            Subtotal:
+            Subtotal: ${subTotal}
             <br/>
-            Tax:
+            Tax: ${tax}
             <br/>
-            <h5>Total:</h5>
+            <h5>Total: ${total}</h5>
             <br/>
             <Button color="primary" size="lg" block>Checkout</Button>
           </CardFooter>

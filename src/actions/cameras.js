@@ -37,7 +37,7 @@ export const addToCart = (id) => {
 export const deleteFromCart = (id) => {
   return async (dispatch) => {
     dispatch({ type: DELETE_FROM_CART_PENDING })
-    let cameras = await axios.patch(`http://localhost:8000/cameras/cart/${id}/add`)
+    let cameras = await axios.patch(`http://localhost:8000/cameras/cart/${id}/remove`)
     dispatch({
       type: DELETE_FROM_CART_SUCCESS,
       payload: cameras
